@@ -105,6 +105,8 @@ class DBOperator {
         return $this->_fields;
     }
 
+
+    
     /**
      * 设置主键
      * @param string $keyName 主键名
