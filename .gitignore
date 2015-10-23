@@ -1,5 +1,9 @@
 /vendor
+/.idea/
 /node_modules
+/app/storage/
 Homestead.yaml
 Homestead.json
 .env
+.idea
+.gitignore
