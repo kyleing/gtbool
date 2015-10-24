@@ -11,22 +11,23 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 Route::group(['profix' => '/'],function()
 {
-    Route::get('/', 'Home\HomeController@index');
+    Route::get('/', function()
+    {
+        return view('homepage.index');
+    });
+
     Route::group(['prefix' => 'blog'],function()
     {
         Route::get('/', 'Blog\BlogController@index');
         Route::get('/catalog', 'Blog\BlogController@catalogList');
         Route::get('/content', 'Blog\BlogController@blogContent');
+        Route::controller('/article','Blog\Article\ArticleController');
     });
     Route::group(['prefix' => 'user'], function()
     {
-        Route::post('/register', 'User\UserController@postRegister');
+        Route::post('/register', 'Blog\User\UserController@postRegister');
     });
 }
 );

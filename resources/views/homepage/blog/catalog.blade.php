@@ -1,4 +1,4 @@
-@extends('homepage.layout.base')
+@extends('homepage.blog.layout.base')
 @section('title')博文目录@stop
 @section('header')
         <!-- Custom styles for this template -->
@@ -25,7 +25,7 @@
                 </nav>
 
             </div><!-- /.blog-main -->
-            @include('homepage.layout.right')
+            @include('homepage.blog.layout.right')
 
         </div><!-- /.row -->
 

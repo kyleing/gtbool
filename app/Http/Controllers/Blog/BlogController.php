@@ -12,16 +12,16 @@ class BlogController extends BaseController
 {
     public function index()
     {
-        return view('homepage.blog');
+        return view('homepage.blog.index');
     }
 
     public function catalogList()
     {
-        return view('homepage.catalog');
+        return view('homepage.blog.catalog');
     }
 
     public function blogContent()
     {
-        return view('homepage.content');
+        return view('homepage.blog.content');
     }
 }

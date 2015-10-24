@@ -10,18 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  **/
 abstract class BaseModel extends Model {
 
-    //todo use public static member var instead of
-    /**
-     *
-     * table define
-     */
-    protected $tb_feedback = 'feedback'; //反馈表
-    protected $tb_event = 'event'; //用户计划表
-    protected $tb_user = 'user'; //用户表
-    protected $tb_theme = 'theme'; //主题表
-    protected $tb_theme_category = 'theme_category';
-    protected $tb_admin_user = 'admin_user'; //管理员用户表
-
     /**
      * 返回错误信息
      * @param $message

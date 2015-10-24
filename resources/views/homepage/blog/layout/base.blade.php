@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="tguo">
 
-    @include('homepage.layout.header')
+    @include('homepage.blog.layout.header')
 
     @yield('header')
 </head>
@@ -65,7 +65,7 @@
 
 @yield('content')
 
-@include('homepage.layout.footer')
+@include('homepage.blog.layout.footer')
 
 <!-- login modal start -->
 <div class="modal fade" id="login-modal" role="dialog" aria-labelledby="loginModal">
@@ -155,12 +155,6 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- register modal end -->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/assets/blog/js/jquery-1.9.1.min.js"></script>
-<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace App\Http\Controllers\Blog\User;
 
 use App\Http\Controllers\BaseController;
-use App\Http\Models\User\UserModel;
+use App\Http\Models\Blog\User\UserModel;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 

@@ -901,3 +901,7 @@ pre {
 .modal-button-bottom {
     text-align: center;
 }
+
+.post-edit-title {
+    margin-bottom: 30px;
+}

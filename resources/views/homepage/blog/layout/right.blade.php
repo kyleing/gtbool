@@ -9,7 +9,7 @@
     <div class="widget">
         <h4 class="title"><i class="glyphicon glyphicon-pencil"></i></h4>
         <div class="content download">
-            <a href="/download/" class="btn btn-default btn-block"><i class="glyphicon glyphicon-pencil"></i> 发布新文章</a>
+            <a href="/blog/article/edit" class="btn btn-default btn-block"><i class="glyphicon glyphicon-pencil"></i> 发布新文章</a>
         </div>
     </div>
     <!-- end widget -->

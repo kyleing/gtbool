@@ -1,4 +1,4 @@
-@extends('homepage.layout.base')
+@extends('homepage.blog.layout.base')
 @section('header')
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="/assets/blog/css/screen.css">
@@ -45,7 +45,7 @@
 
             </main>
 
-            @include('homepage.layout.right')
+            @include('homepage.blog.layout.right')
 
         </div>
     </div>

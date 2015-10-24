@@ -1,4 +1,4 @@
-<?php namespace App\Http\Models\User;
+<?php namespace App\Http\Models\Blog\User;
 use App\Http\Models\Common\BaseModel;
 
 /**
