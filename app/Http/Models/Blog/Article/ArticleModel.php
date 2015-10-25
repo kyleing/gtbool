@@ -21,8 +21,7 @@ class ArticleModel extends BaseModel
      */
     public function addArticle($data)
     {
-        //return D($this->tb_article)->upsertBy($data,['id']);
-        return D($this->tb_article)->insert($data);
+        return D($this->tb_article)->upsertBy($data,['id']);
     }
 
     public function getArticleContent($id)

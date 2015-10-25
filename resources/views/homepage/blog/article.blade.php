@@ -2,6 +2,9 @@
 @section('header')
         <!-- Custom styles for this template -->
 <link rel="stylesheet" href="/assets/blog/css/screen.css">
+<link rel="stylesheet" type="text/css" href="/assets/blog/simditor/styles/simditor.css" />
+
+
 @stop
 
 @section('content')
@@ -20,10 +23,10 @@
                             <time class="post-date" datetime="2015年9月7日星期一凌晨4点31分" title="2015年9月7日星期一凌晨4点31分">{{$data['created_at']}}</time>
                         </div>
                     </div>
-                    <div class="post-content">
-                        <p>
-                            {{$data['content']}}
-                        </p>
+                    <div class="post-content ">
+                        <pre>
+                        {{$data['content']}}
+                        </pre>
                     </div>
 
                     <footer class="post-footer clearfix">
@@ -36,9 +39,10 @@
                     </footer>
                 </article>
             </main>
-
-
         </div>
     </div>
 </section>
+<script>
+    $(".post-content").html("{{$data['content']}}");
+</script>
 @stop
