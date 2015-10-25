@@ -52,8 +52,27 @@
     $(document).ready(function()
     {
         var editor = new Simditor({
-            textarea: $('#editor')
+            textarea: $('#editor'),
             //optional options
+            toolbar: [
+                'title',
+                'bold',
+                'italic',
+                'underline',
+                'strikethrough',
+                'color',
+                'ol',
+                'ul',
+                'blockquote',
+                'code',
+                'table',
+                'link',
+                'image',
+                'hr',
+                'indent',
+                'outdent',
+                'alignment'
+            ]
         });
     });
 </script>

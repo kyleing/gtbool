@@ -21,8 +21,6 @@ Route::group(['profix' => '/'],function()
     Route::group(['prefix' => 'blog'],function()
     {
         Route::get('/', 'Blog\BlogController@index');
-        Route::get('/catalog', 'Blog\BlogController@catalogList');
-        Route::get('/content', 'Blog\BlogController@blogContent');
         Route::controller('/article','Blog\Article\ArticleController');
     });
     Route::group(['prefix' => 'user'], function()

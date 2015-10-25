@@ -224,7 +224,7 @@ class DBOperator {
     {
         $conds = array_only($obj, $cri);
         $old = $this->findByOne($conds, [$this->pkey]);
-        if ($old)
+        if ($old && $conds)
         { //exist, so just update
             $obj[$this->pkey] = $old[$this->pkey];
             $obj = $this->updateById($obj);

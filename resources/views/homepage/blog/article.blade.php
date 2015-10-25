@@ -24,9 +24,7 @@
                         </div>
                     </div>
                     <div class="post-content ">
-                        <pre>
-                        {{$data['content']}}
-                        </pre>
+                        {!! $data['content'] !!}
                     </div>
 
                     <footer class="post-footer clearfix">
@@ -42,7 +40,4 @@
         </div>
     </div>
 </section>
-<script>
-    $(".post-content").html("{{$data['content']}}");
-</script>
 @stop

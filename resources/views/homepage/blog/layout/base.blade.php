@@ -49,8 +49,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
-                        <li class="nav-current" role="presentation"><a href="/">首页</a></li>
-                        <li  role="presentation"><a href="http://wenda.ghostchina.com">博文目录</a></li>
+                        <li class="nav-current" role="presentation"><a href="/blog">首页</a></li>
+                        <li  role="presentation"><a href="/blog/article/catalog">博文目录</a></li>
                         <li  role="presentation"><a href="/ghost-cheat-sheet/">未知</a></li>
                         <li  role="presentation"><a href="http://docs.ghostchina.com/zh/">关于我</a></li>
                         <li  role="presentation"><a href="" data-toggle="modal" data-target="#register-modal">注册</a></li>

@@ -48,6 +48,21 @@ class ArticleController extends BaseController
         }
     }
 
+    public function getCatalog()
+    {
+        $page = Input::get('page',1);
+
+        $list = $this->M_article->getArticletList([],$page);
+
+        $pageInfo['count'] = $this->M_article->countArticle([]);
+
+        return view('homepage.blog.catalog')
+            ->with([
+                'data' => $list,
+                'pageInfo' => $pageInfo
+            ]);
+    }
+
     /**
      * 博客编辑页
      *
