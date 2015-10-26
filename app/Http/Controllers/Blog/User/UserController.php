@@ -29,7 +29,7 @@ class UserController extends BaseController
                 ->with(['msg' => '请填写密码']);
         }
 
-        $data['password'] = bcrypt($data['password']);
+        $data['password'] = Hash::make($data['password']);
         $user = new UserModel();
         return $user->regiset($data);
     }
