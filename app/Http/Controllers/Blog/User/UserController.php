@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\BaseController;
 use App\Http\Models\Blog\User\UserModel;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
@@ -26,7 +28,23 @@ class UserController extends BaseController
             return Redirect::back()
                 ->with(['msg' => '请填写密码']);
         }
+
+        $data['password'] = bcrypt($data['password']);
         $user = new UserModel();
         return $user->regiset($data);
+    }
+
+    public function postLogin()
+    {
+        $data = Input::all();
+
+        if(Auth::attempt($data))
+        {
+            return Auth::user();
+        }
+        else
+        {
+            return 'no';
+        }
     }
 }
