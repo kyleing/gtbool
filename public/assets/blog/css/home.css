@@ -161,3 +161,18 @@ body {
         width: 700px;
     }
 }
+
+#forkme {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    border: 0;
+    background: url(/assets/images/forkme.png) no-repeat;
+    width: 149px;
+    height: 149px;
+    text-indent: -1000px;
+    overflow: hidden;
+
+}
