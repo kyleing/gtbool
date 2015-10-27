@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
 
-            <main class="col-md-12 main-content">
+            <main class="col-md-9 main-content">
 
                 <article id=92 class="post tag-about-ghost tag-release tag-ghost-0-7-ban-ben">
 
@@ -36,7 +36,26 @@
                         </div>
                     </footer>
                 </article>
+
+                <div class="comment">
+                    <div class="comment-header">
+                        回复数量:<b>0</b>
+                    </div>
+                    <div class="comment-body">
+                        <div class="no-comment">
+                            暂无评论---
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-comment">
+                    <form action="">
+                        <textarea class="form-control" id="comment-input" name="" rows="6" placeholder="需要登陆后才能发布评论" disabled></textarea>
+                        <input type="submit" class="btn btn-info" value="回复">
+                    </form>
+                </div>
             </main>
+            @include('homepage.blog.layout.right')
         </div>
     </div>
 </section>

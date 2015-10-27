@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
 
-            <main class="col-md-8 main-content">
+            <main class="col-md-9 main-content">
 
                 @if($data)
                     @foreach($data as $list)
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>{{$list['content']}}</p>
+                        <p>{!! $list['content'] !!}</p>
                     </div>
                     <div class="post-permalink">
                         <a href="/blog/content?id=1" class="btn btn-default">阅读全文（139）</a>

@@ -1,4 +1,4 @@
-<aside class="col-md-4 sidebar">
+<aside class="col-md-3 sidebar">
     <!-- start widget -->
     <!-- end widget -->
 

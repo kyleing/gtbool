@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
 
-            <main class="col-md-8 main-content">
+            <main class="col-md-9 main-content">
 
                 <article id=92 class="post tag-about-ghost tag-release tag-ghost-0-7-ban-ben">
                     @if($data)
