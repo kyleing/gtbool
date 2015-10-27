@@ -3,6 +3,9 @@
         <!-- Custom styles for this template -->
 <link rel="stylesheet" href="/assets/blog/css/screen.css">
 <link rel="stylesheet" type="text/css" href="/assets/blog/simditor/styles/simditor.css" />
+
+<link rel="stylesheet" type="text/css" href="/assets/blog/css/jquery.tagsinput.css" />
+<link rel="stylesheet" type="text/css" href="/assets/blog/css/jquery-ui.css" />
 @stop
 
 @section('content')
@@ -20,6 +23,10 @@
                             <div class="post-edit-title">
                                 <label>标题</label>
                                 <input type="text" name="title" class="form-control" id="titleInput" placeholder="title">
+                            </div>
+                            <div class="post-edit-tag">
+                                <label>标签云</label>
+                                <input type="text" name="tag" class="form-control tags" id="tagInput" placeholder="Add a tag (TAB or ENTER to add and move)">
                             </div>
                             <textarea id="editor"  name="content" placeholder="开始博客" autofocus></textarea>
                         </div>
@@ -48,6 +55,9 @@
 <script type="text/javascript" src="/assets/blog/simditor/scripts/uploader.min.js"></script>
 <script type="text/javascript" src="/assets/blog/simditor/scripts/simditor.min.js"></script>
 
+<script type="text/javascript" src="/assets/blog/js/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="/assets/blog/js/jquery-ui.min.js"></script>
+
 <script>
     $(document).ready(function()
     {
@@ -74,6 +84,23 @@
                 'alignment'
             ]
         });
+    });
+</script>
+
+<script type="text/javascript">
+    function onAddTag(tag) {
+        alert("Added a tag: " + tag);
+    }
+    function onRemoveTag(tag) {
+        alert("Removed a tag: " + tag);
+    }
+
+    function onChangeTag(input,tag) {
+        alert("Changed a tag: " + tag);
+    }
+
+    $(function() {
+        $('#tagInput').tagsInput({width:'auto'});
     });
 </script>
 
