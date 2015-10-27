@@ -26,6 +26,7 @@ Route::group(['profix' => '/'],function()
     Route::group(['prefix' => 'user'], function()
     {
         Route::post('/register', 'Blog\User\UserController@postRegister');
+        Route::post('/login', 'Blog\User\UserController@postLogin');
     });
 }
 );

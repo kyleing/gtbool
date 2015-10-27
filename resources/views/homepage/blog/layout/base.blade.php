@@ -77,7 +77,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="/user/login" method="post">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-10">

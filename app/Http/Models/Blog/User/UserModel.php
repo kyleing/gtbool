@@ -11,6 +11,6 @@ class UserModel extends BaseModel
 {
     public function regiset($data)
     {
-        return D('user')->insert($data);
+        return D('users')->insert($data);
     }
 }
