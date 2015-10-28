@@ -37,8 +37,10 @@ class ArticleController extends BaseController
             $data = $this->M_article->getArticleContent($this->id);
             if($data)
             {
+                $tag = $data['tag'] ? explode(',',$data['tag']) : [];
                 return view('homepage.blog.article')->with([
-                    'data' => $data
+                    'data' => $data,
+                    'tag' => $tag
                 ]);
             }
         }
@@ -79,6 +81,24 @@ class ArticleController extends BaseController
     public function postEdit()
     {
         $data = Input::all();
+
+        $tag = array_get($data,'tag','');
+
+        $new_tag_data = explode(',',$tag);
+
+        $old_tag_data = $this->M_article->getTag();
+
+        $old_tag = $old_tag_data ? explode(',',$old_tag_data['name']) : [];
+
+        //判断该标签是否为新标签
+        $new_tag = array_diff($new_tag_data,$old_tag);
+
+        //如果是新标签,则创建该标签
+        if(!empty($new_tag))
+        {
+            $new_tag = implode(',',$new_tag);
+            $this->M_article->addTag($new_tag);
+        }
 
         if($this->id)
         {

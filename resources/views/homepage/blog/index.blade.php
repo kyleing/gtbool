@@ -25,13 +25,17 @@
                         <p>{!! $list['content'] !!}</p>
                     </div>
                     <div class="post-permalink">
-                        <a href="/blog/content?id=1" class="btn btn-default">阅读全文（139）</a>
+                        <a href="/blog/article?id={{$list['id']}}" class="btn btn-default">阅读全文（139）</a>
                     </div>
 
                     <footer class="post-footer clearfix">
                         <div class="pull-left tag-list">
-                            <i class="fa fa-folder-open-o"></i>
-                            <a href="/tag/about-ghost/">Ghost</a>, <a href="/tag/release/">新版本发布</a>, <a href="/tag/ghost-0-7-ban-ben/">Ghost 0.7 版本</a>
+                            <i class="glyphicon glyphicon-cloud"></i>
+                            @if($list['tag'])
+                                @foreach($list['tag'] as $tag)
+                                    <a href="/tag/about-ghost/">{{$tag}}, </a>
+                                    @endforeach
+                                @endif
                         </div>
                         <div class="pull-right share">
                         </div>
@@ -41,7 +45,7 @@
                 @endif
 
                 <nav class="pagination" role="navigation">
-                    <span class="page-number">第 1 页 &frasl; 共 8 页</span>
+                    <span class="page-number">第 {{$pageInfo['page']}} 页 &frasl; 共 {{$pageInfo['pages']}} 页</span>
                     <a class="older-posts" href="/page/2/"><i class="fa fa-angle-right"></i></a>
                 </nav>
 

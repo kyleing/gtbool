@@ -36,6 +36,7 @@ class ArticleModel extends BaseModel
      */
     public function addArticle($data)
     {
+        $data = array_filter($data);
         return D($this->tb_article)->upsertBy($data,['id']);
     }
 
@@ -49,8 +50,44 @@ class ArticleModel extends BaseModel
         return D($this->tb_article)->findById($id);
     }
 
+    /**
+     * 统计文章数
+     * @param array $conds
+     * @return mixed
+     */
     public function countArticle($conds = [])
     {
         return D($this->tb_article)->rows($conds);
+    }
+
+    /**
+     * 标签列表
+     * @return mixed
+     */
+    public function getTag()
+    {
+        return D($this->tb_tag)->findByOne([]);
+    }
+
+
+    /**
+     * 增加标签
+     * @param string $name
+     * @return array|bool
+     */
+    public function addTag($name = '')
+    {
+        $o_tag = D($this->tb_tag)->findByOne([]);
+
+        $data['name'] = $name;
+
+        if($o_tag)
+        {
+            $data['name'] = $o_tag['name'] . ',' . $name;
+            $data['id'] = $o_tag['id'];
+            return D($this->tb_tag)->upsertById($data);
+        }
+
+        return D($this->tb_tag)->insert($data);
     }
 }

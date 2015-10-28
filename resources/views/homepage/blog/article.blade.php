@@ -30,7 +30,12 @@
                     <footer class="post-footer clearfix">
                         <div class="pull-left tag-list">
                             <i class="fa fa-folder-open-o"></i>
-                            <a href="/tag/about-ghost/">Ghost</a>, <a href="/tag/release/">新版本发布</a>, <a href="/tag/ghost-0-7-ban-ben/">Ghost 0.7 版本</a>
+                            <i class="glyphicon glyphicon-cloud"></i>
+                            @if($tag)
+                                @foreach($tag as $v)
+                                    <a href="#">{{$v}}</a>,
+                                    @endforeach
+                                @endif
                         </div>
                         <div class="pull-right share">
                         </div>
