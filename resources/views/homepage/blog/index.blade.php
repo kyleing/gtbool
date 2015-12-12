@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>{!! $list['content'] !!}</p>
+                        <p>{!! substr($list['content'],0,60) !!}</p>
                     </div>
                     <div class="post-permalink">
                         <a href="/blog/article?id={{$list['id']}}" class="btn btn-default">阅读全文（139）</a>

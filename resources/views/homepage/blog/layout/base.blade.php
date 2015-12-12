@@ -48,7 +48,7 @@
                         </span>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
+                    <ul class="menu" id="topMenu">
                         <li class="nav-current" role="presentation"><a href="/blog">首页</a></li>
                         <li  role="presentation"><a href="/blog/article/catalog">博文目录</a></li>
                         <li  role="presentation"><a href="/ghost-cheat-sheet/">未知</a></li>
@@ -155,6 +155,20 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- register modal end -->
+
+<!-- 公共部分 -->
+<script>
+    $(function(){
+        var $menu = $('#topMenu');
+        var $node = $menu.find('a[href="' + location.pathname + location.search + location.hash + '"]').addClass('active');
+        $node = $node.length ? $node : $menu.find('a[href="' + location.pathname + location.search + '"]');
+        $node = $node.length ? $node : $menu.find('a[href="' + location.pathname + '"]');
+        $li = $node.parent();
+
+        $menu.find('li').removeClass('nav-current');
+        $li.addClass('nav-current');
+    });
+</script>
 
 </body>
 </html>
