@@ -66,7 +66,9 @@ class ArticleModel extends BaseModel
      */
     public function getTag()
     {
-        return D($this->tb_tag)->findByOne([]);
+        $tag = D($this->tb_tag)->findByOne([])['name'];
+        $tag = $tag ? explode(',',$tag) : [];
+        return $tag;
     }
 
 
@@ -90,4 +92,5 @@ class ArticleModel extends BaseModel
 
         return D($this->tb_tag)->insert($data);
     }
+
 }

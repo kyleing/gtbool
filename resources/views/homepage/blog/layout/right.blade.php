@@ -18,6 +18,7 @@
     <div class="widget">
         <h4 class="title"><i class="glyphicon glyphicon-cloud"></i></h4>
         <div class="content tag-cloud">
+
             <a href="/tag/about-ghost/">Ghost</a>
             <a href="/tag/release/">新版本发布</a>
             <a href="/tag/javascript/">JavaScript</a>

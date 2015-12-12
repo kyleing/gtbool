@@ -13,15 +13,17 @@ class BlogController extends BaseController
 {
     public function index()
     {
+        $am = new ArticleModel();
         $page = Input::get('page',1);
         $page_size = 5;
 
-        $list = (new ArticleModel())->getArticletList([],$page,$page_size);
+        $list = $am->getArticletList([],$page,$page_size);
+        $tag = $am->getTag();
 
 
         $pageInfo = [];
         $pageInfo['page'] = $page;
-        $pageInfo['count'] = (new ArticleModel())->countArticle();
+        $pageInfo['count'] = $am->countArticle();
         $pageInfo['pages'] = ceil($pageInfo['count'] / $page_size);
 
         if(!empty($list))
@@ -35,6 +37,7 @@ class BlogController extends BaseController
         return view('homepage.blog.index')
             ->with([
                 'data' => $list,
+                'tag' => $tag,
                 'pageInfo' => $pageInfo
             ]);
     }

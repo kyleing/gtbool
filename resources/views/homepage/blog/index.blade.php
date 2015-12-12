@@ -44,9 +44,11 @@
                     @endforeach
                 @endif
 
+
                 <nav class="pagination" role="navigation">
+                    <a class="page-number" href="/blog?page={{$pageInfo['page'] - 1}}"><i class="fa fa-angle-right">Previous</i></a>
                     <span class="page-number">第 {{$pageInfo['page']}} 页 &frasl; 共 {{$pageInfo['pages']}} 页</span>
-                    <a class="older-posts" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+                    <a class="page-number" href="/blog?page={{$pageInfo['page'] + 1}}"><i class="fa fa-angle-right">Next</i></a>
                 </nav>
 
 

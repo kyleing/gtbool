@@ -51,10 +51,10 @@
                     <ul class="menu" id="topMenu">
                         <li class="nav-current" role="presentation"><a href="/blog">首页</a></li>
                         <li  role="presentation"><a href="/blog/article/catalog">博文目录</a></li>
-                        <li  role="presentation"><a href="/ghost-cheat-sheet/">未知</a></li>
+                        {{--<li  role="presentation"><a href="/ghost-cheat-sheet/">未知</a></li>
                         <li  role="presentation"><a href="http://docs.ghostchina.com/zh/">关于我</a></li>
                         <li  role="presentation"><a href="" data-toggle="modal" data-target="#register-modal">注册</a></li>
-                        <li  role="presentation"><a href="" data-toggle="modal" data-target="#login-modal">登陆</a></li>
+                        <li  role="presentation"><a href="" data-toggle="modal" data-target="#login-modal">登陆</a></li>--}}
                     </ul>
                 </div>
             </div>
