@@ -17,29 +17,8 @@
     <!-- start tag cloud widget -->
     <div class="widget">
         <h4 class="title"><i class="glyphicon glyphicon-cloud"></i></h4>
-        <div class="content tag-cloud">
+        <div class="content tag-cloud" id="tagCloud">
 
-            <a href="/tag/about-ghost/">Ghost</a>
-            <a href="/tag/release/">新版本发布</a>
-            <a href="/tag/javascript/">JavaScript</a>
-            <a href="/tag/promise/">Promise</a>
-            <a href="/tag/zhuti/">主题</a>
-            <a href="/tag/mysql/">MySQL</a>
-            <a href="/tag/nodejs/">Node.js</a>
-            <a href="/tag/ghost-in-depth/">深度玩转 Ghost</a>
-            <a href="/tag/ubuntu/">Ubuntu</a>
-            <a href="/tag/aliyun-ecs/">阿里云服务器</a>
-            <a href="/tag/nginx/">Nginx</a>
-            <a href="/tag/bae/">BAE</a>
-            <a href="/tag/theme/">Theme</a>
-            <a href="/tag/ghost-0-7-ban-ben/">Ghost 0.7 版本</a>
-            <a href="/tag/zhu-shou-han-shu/">助手函数</a>
-            <a href="/tag/customize-page/">自定义页面</a>
-            <a href="/tag/static-page/">静态页面</a>
-            <a href="/tag/upload/">上传</a>
-
-
-            <a href="/tag-cloud/">...</a>
         </div>
     </div>
     <!-- end tag cloud widget -->
@@ -61,4 +40,23 @@
         </div>
     </div>
     <!-- start widget -->
-    <!-- end widget -->                </aside>
+    <!-- end widget -->
+</aside>
+
+<script>
+    $(function(){
+        $.get('/blog/article/info',{},function(res,status)
+        {
+            $.each(res,function(k,v){
+               if(k == 'tag')
+               {
+                   for(var i = 0 ;i < v.length ;i++)
+                   {
+                       var str = "<a href=''>"+ v[i] +"</a>";
+                       $(".tag-cloud").append(str);
+                   }
+               }
+            });
+        },'json')
+    });
+</script>

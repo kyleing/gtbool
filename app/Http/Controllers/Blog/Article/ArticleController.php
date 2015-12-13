@@ -50,6 +50,10 @@ class ArticleController extends BaseController
         }
     }
 
+    /*
+     * 获取博文目录
+     *
+     */
     public function getCatalog()
     {
         $page = Input::get('page',1);
@@ -86,9 +90,9 @@ class ArticleController extends BaseController
 
         $new_tag_data = explode(',',$tag);
 
-        $old_tag_data = $this->M_article->getTag();
+        //$old_tag_data = $this->M_article->getTag();
 
-        $old_tag = $old_tag_data ? explode(',',$old_tag_data['name']) : [];
+        $old_tag = $this->M_article->getTag();
 
         //判断该标签是否为新标签
         $new_tag = array_diff($new_tag_data,$old_tag);
@@ -115,5 +119,17 @@ class ArticleController extends BaseController
                 return Redirect::to('/blog/article?id=' . $res['id']);
             }
         }
+    }
+
+    public function getInfo()
+    {
+        $tag = $this->M_article->getTag();
+
+        //todo get create time
+
+        $data['tag'] = $tag;
+
+        return $data;
+
     }
 }
