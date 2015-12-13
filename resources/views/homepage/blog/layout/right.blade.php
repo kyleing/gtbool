@@ -26,9 +26,8 @@
     <!-- start widget -->
     <div class="widget">
         <h4 class="title">Archives</h4>
-        <div>
-            <p><a href="">March 2014</a></p>
-            <p><a href="">February 2014</a></p>
+        <div id="createTime">
+
         </div>
     </div>
     <!-- end widget -->
@@ -56,6 +55,15 @@
                        $(".tag-cloud").append(str);
                    }
                }
+                if(k == 'time')
+                {
+                    for(var j = 0 ;j < v.length ;j++)
+                    {
+                        var time = "<p><a href=''>"+ v[j] +"</a><p/>";
+                        $("#createTime").append(time);
+                    }
+                }
+
             });
         },'json')
     });

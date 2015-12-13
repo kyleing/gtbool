@@ -124,10 +124,12 @@ class ArticleController extends BaseController
     public function getInfo()
     {
         $tag = $this->M_article->getTag();
+        $time = $this->M_article->getCreateTime();
 
-        //todo get create time
-
-        $data['tag'] = $tag;
+        $data = [
+            'tag' => $tag,
+            'time' => $time
+        ];
 
         return $data;
 

@@ -93,4 +93,24 @@ class ArticleModel extends BaseModel
         return D($this->tb_tag)->insert($data);
     }
 
+    public function getCreateTime()
+    {
+        //todo filter delete article
+        $article = D($this->tb_article)->orderBy('id','desc')->findBy([],['created_at']);
+        $time = [];
+        if($article)
+        {
+            foreach($article as $v)
+            {
+                //格式化创建时间
+                $time[] = date('F Y',strtotime($v['created_at']));
+            }
+
+            //去重
+            $time = array_unique($time);
+        }
+
+        return $time;
+    }
+
 }
