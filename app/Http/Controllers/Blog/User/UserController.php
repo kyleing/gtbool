@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Redirect;
  */
 class UserController extends BaseController
 {
+    public function getLogin()
+    {
+        return view('homepage.signin');
+    }
     public function postRegister()
     {
         $data = Input::all();

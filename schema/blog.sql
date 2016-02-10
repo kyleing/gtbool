@@ -74,7 +74,30 @@ CREATE TABLE IF NOT EXISTS `tag` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签表' AUTO_INCREMENT=1 ;
 
+CREATE TABLE `team_attendance` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `week` varchar(100) DEFAULT NULL,
+  `day` varchar(255) DEFAULT NULL,
+  `start` varchar(100) DEFAULT NULL,
+  `end` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='考勤表' AUTO_INCREMENT=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+cat 201504.it.csv | while read LINE
+do
+	name=$(echo $LINE | cut -f 1 -d ,)
+	day=$(echo $LINE | cut -f 2 -d ,)
+	week=$(echo $LINE | cut -f 3 -d ,)
+	start=$(echo $LINE | cut -f 4 -d ,)
+	end=$(echo $LINE | cut -f 5 -d ,)
+
+	echo -n 'INSERT IGNORE INTO `team_attendance`(`name`,`week`,`day`,`start`,`end`) VALUES(' >> 3.sql
+    echo -n "\"$name\",\"$week\",\"$day\",\"$start\",\"$end\"" >> 3.sql
+    echo ');' >> 3.sql
+done

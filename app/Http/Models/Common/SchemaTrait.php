@@ -14,4 +14,5 @@ trait SchemaTrait
     protected $tb_user = 'user';
     protected $tb_article = 'article';
     protected $tb_tag = 'tag';
+    protected $tb_team = 'team_attendance';
 }

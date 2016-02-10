@@ -18,15 +18,19 @@ Route::group(['profix' => '/'],function()
         return view('homepage.index');
     });
 
+    Route::controller('team','Team\TeamController');
+
     Route::group(['prefix' => 'blog'],function()
     {
         Route::get('/', 'Blog\BlogController@index');
         Route::controller('/article','Blog\Article\ArticleController');
     });
-    Route::group(['prefix' => 'user'], function()
+
+    Route::controller('user','Blog\User\UserController');
+   /* Route::group(['prefix' => 'user'], function()
     {
         Route::post('/register', 'Blog\User\UserController@postRegister');
         Route::post('/login', 'Blog\User\UserController@postLogin');
-    });
+    });*/
 }
 );
